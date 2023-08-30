@@ -1,6 +1,6 @@
 def run_nginx(plan, nginx_config):
     # https://docs.kurtosis.com/starlark-reference/plan#add_service
-    plan.add_service(
+    service = plan.add_service(
         name = "nginx",
         config = ServiceConfig(
             image = "nginx:latest",
@@ -14,10 +14,16 @@ def run_nginx(plan, nginx_config):
             },
         )
     )
+    return struct(
+        name = service.name,
+        ip = service.ip_address,
+        hostname = service.hostname,
+        ports = service.ports,
+    )
 
 def run_zetanode(plan, name="zetachain-node", entrypoint=[], ports={}, files={}):
     # See https://docs.kurtosis.com/starlark-reference/plan#add_service
-    plan.add_service(
+    service = plan.add_service(
         config = ServiceConfig(
 	    # See https://docs.kurtosis.com/starlark-reference/service-config
             image = "zetanode:latest", #TODO: add optional image param rather than hardcode of latest.
@@ -42,4 +48,10 @@ def run_zetanode(plan, name="zetachain-node", entrypoint=[], ports={}, files={})
             #    ),
             #},
         )
+    )
+    return struct(
+        name = service.name,
+        ip = service.ip_address,
+        hostname = service.hostname,
+        ports = service.ports,
     )
