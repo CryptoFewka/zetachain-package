@@ -1,14 +1,14 @@
 My Package
 ============
-This is a [Kurtosis package](https://docs.kurtosis.com/concepts-reference/packages). It doesn't do much now, but it will soon!
+This is a [Kurtosis package](https://docs.kurtosis.com/concepts-reference/packages). It launches a ZetaChain testnet in a box.
 
 Run this package
 ----------------
 If you have [Kurtosis installed][install-kurtosis], run:
 
-<!-- TODO replace YOURUSER and THISREPO with the correct values -->
+<!-- TODO replace CryptoFewka and metachain-package with the correct values -->
 ```bash
-kurtosis run github.com/YOURUSER/THISREPO
+kurtosis run github.com/CryptoFewka/metachain-package
 ```
 
 If you don't have Kurtosis installed, [click here to run this package on the Kurtosis playground](https://gitpod.io/?autoStart=true&editor=code#https://github.com/kurtosis-tech/playground-gitpod).
@@ -36,16 +36,16 @@ The arguments can then be passed in to `kurtosis run`.
 
 For example:
 
-<!-- TODO replace YOURUSER and THISREPO with the correct values -->
+<!-- TODO replace CryptoFewka and metachain-package with the correct values -->
 ```bash
-kurtosis run github.com/YOURUSER/THISREPO '{"name":"Maynard James Keenan"}'
+kurtosis run github.com/CryptoFewka/metachain-package '{"name":"Maynard James Keenan"}'
 ```
 
 You can also store the JSON args in a file, and use command expansion to slot them in:
 
-<!-- TODO replace YOURUSER and THISREPO with the correct values -->
+<!-- TODO replace CryptoFewka and metachain-package with the correct values -->
 ```bash
-kurtosis run github.com/YOURUSER/THISREPO "$(cat args.json)"
+kurtosis run github.com/CryptoFewka/metachain-package "$(cat args.json)"
 ```
 
 </details>
@@ -54,11 +54,11 @@ Use this package in your package
 --------------------------------
 Kurtosis packages can be composed inside other Kurtosis packages. To use this package in your package:
 
-<!-- TODO Replace YOURUSER and THISREPO with the correct values! -->
+<!-- TODO Replace CryptoFewka and metachain-package with the correct values! -->
 First, import this package by adding the following to the top of your Starlark file:
 
 ```python
-this_package = import_module("github.com/YOURUSER/THISREPO/main.star")
+this_package = import_module("github.com/CryptoFewka/metachain-package/main.star")
 ```
 
 Then, call the this package's `run` function somewhere in your Starlark script:
