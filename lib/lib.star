@@ -24,6 +24,7 @@ def run_nginx(plan, nginx_config):
 def run_zetanode(plan, name="zetachain-node", entrypoint=[], ports={}, files={}):
     # See https://docs.kurtosis.com/starlark-reference/plan#add_service
     service = plan.add_service(
+        name = name,
         config = ServiceConfig(
 	    # See https://docs.kurtosis.com/starlark-reference/service-config
             image = "zetanode:latest", #TODO: add optional image param rather than hardcode of latest.
