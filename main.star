@@ -28,7 +28,7 @@ def run(plan, num_validator_nodes=NUM_VALIDATOR_NODES, num_full_nodes=NUM_FULL_N
     )
     # Grab ethereum network_params.json for eth2-package using a relative locator
     network_params = read_file(
-        src = "./static_files/eth_network_params.json",
+        src = "./static-files/eth_network_params.json",
     )
 
     plan.print("Building with " + num_validator_nodes + " validators, and " + num_full_nodes + " full nodes" )
