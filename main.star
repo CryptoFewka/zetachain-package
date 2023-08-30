@@ -31,7 +31,7 @@ def run(plan, num_validator_nodes=NUM_VALIDATOR_NODES, num_full_nodes=NUM_FULL_N
         src = "./static-files/eth_network_params.json",
     )
 
-    plan.print("Building with " + num_validator_nodes + " validators, and " + num_full_nodes + " full nodes" )
+    plan.print("Building with " + str(num_validator_nodes) + " validators, and " + srt(num_full_nodes) + " full nodes" )
 
     # https://docs.kurtosis.com/starlark-reference/plan#upload_files
     #config_json = plan.upload_files("github.com/CryptoFewka/zetachain-package/static-files/config.json")
