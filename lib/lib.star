@@ -27,17 +27,17 @@ def run_zetanode(plan, name="zetachain-node", entrypoint=[], ports={}, files={})
         config = ServiceConfig(
 	    # See https://docs.kurtosis.com/starlark-reference/service-config
             image = "zetanode:latest", #TODO: add optional image param rather than hardcode of latest.
-            ports,
+            ports = ports,
     	    #ports = {
             #   "RPC": PortSpec(number = 8546, wait = "2m"),
             #   "WEBSOCKET": PortSpec(number = 8546, wait = "2m")
             #},
-            entrypoint,
+            entrypoint = entrypoint,
             #entrypoint = [
             #    "/root/genesis.sh", 
             #    num_nodes
             #],
-            files,
+            files = files,
             #files = {
             #    "path/to/files/artifact_1/": files_artifact_1,
             #    "path/to/files/artifact_2/": Directory(
